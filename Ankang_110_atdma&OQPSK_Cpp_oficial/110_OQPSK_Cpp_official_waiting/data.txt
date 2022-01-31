@@ -1,0 +1,88 @@
+"1600000.0" // symbol frequency
+"25000000.0" //sampling frequency
+"-5459600.0" //central frequency
+"0.3" // Rolloff factor (default = 0.3)
+"6" // resampling point
+"3" // detection type
+"1000000" // file length (char num)
+"3" // FilterSpanInSymbols (default=3)
+"QPSK" // modulation type
+"burst1_sr25.0_dtCplx_st8t" // data file
+"read_test.txt" // demodulation result
+"0" // 1 for input pilot / 0 for deflaut pilot
+"4" // space_type = X means data sequence is composed of ( X pilot , 30-X data)
+"0506050665066000006066600006650060660000050000600066066060060000" // pilot sequence
+
+
+
+"256000.0" // symbol frequency
+"6250000.0" //sampling frequency
+"-338745.0" //central frequency
+"0.3" // Rolloff factor (default = 0.3)
+"1" // resampling point
+"2" // detection type
+"1000000" // file length (char num)
+"3" // FilterSpanInSymbols (default=3)
+"OQPSK" // modulation type
+"burst2_sr6.25_dtCplx_st8t" // data file
+"read_test.txt" // demodulation result
+"0" // 1 for input pilot / 0 for deflaut pilot
+"4" // space_type = X means data sequence is composed of ( X pilot , 30-X data)
+"213031330103312010011323310" // pilot sequence
+
+
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+// Parameters Explaination
+////////////////////////////////////////////////////////////////////////////////////////////
+// space_type
+// atdma: 
+// space_type = 2(2 pilot, 28 data) or 3(3 pilot, 27 data) or 4(4 pilot, 26 data)
+// OQPSK:
+// no need to input space type for OQPSK
+
+// detect_type
+// detect_type = 0 for atdma_QPSK 
+// detect_type = 1 for atdma_8PSK 
+// detect_type = 2 for OQPSK 
+// detect_type = 3 for blind detection  
+
+////////////////////////////////////////////////////////////////////////////////////////////
+// Input Parameters Example
+///////  atdma  //////////////////////////////////////////////////////////////
+"1600000.0" // symbol frequency
+"25000000.0" //sampling frequency
+"-5459600.0" //central frequency
+"0.3" // Rolloff factor (default = 0.3)
+"6" // resampling point
+"3" // detection type
+"10000000" // file length (char num)
+"3" // FilterSpanInSymbols (default=3)
+"QPSK" // modulation type
+"burst1_sr25.0_dtCplx_st8t" // data file
+"read_test.txt" // demodulation result
+"0" // 1 for input pilot / 0 for deflaut pilot
+"4" // space_type = X means data sequence is composed of ( X pilot , 30-X data)
+"0506050665066000006066600006650060660000050000600066066060060000" // pilot sequence
+
+
+////////////////////////////////////////////////////////////////////////////////////////////
+///////  OQPSK  //////////////////////////////////////////////////////////////
+"256000.0" // symbol frequency
+"6250000.0" //sampling frequency
+"-338745.0" //central frequency
+"0.3" // Rolloff factor (default = 0.3)
+"1" // resampling point
+"2" // detection type
+"1000000" // file length (char num)
+"3" // FilterSpanInSymbols (default=3)
+"OQPSK" // modulation type
+"burst2_sr6.25_dtCplx_st8t" // data file
+"read_test.txt" // demodulation result
+"0" // 1 for input pilot / 0 for deflaut pilot
+"4" // space_type = X means data sequence is composed of ( X pilot , 30-X data)
+"213031330103312010011323310" // pilot sequence
+
+
+
