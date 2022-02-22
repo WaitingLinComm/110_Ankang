@@ -165,10 +165,18 @@ for i = 1 : number_of_bursts
     b_q_hat_d_buffer{i} =  b_q_hat_d;
 end
 %% vectorize data from buffer
-L = size(l_hat_p_buffer, 1) * size(l_hat_p_buffer, 2);
-vec_l_hat_p = vec(l_hat_p_buffer);       % or vec_l_hat_p = reshape(l_hat_p_buffer,L,1); % a col vector 
-vec_b_i_hat_p = vec(b_i_hat_p_buffer.'); % a col vector
-vec_b_q_hat_p = vec(b_q_hat_p_buffer.'); % a col vector
+% vec_l_hat_p = vec(l_hat_p_buffer);       % a col vector 
+% vec_b_i_hat_p = vec(b_i_hat_p_buffer.'); % a col vector
+% vec_b_q_hat_p = vec(b_q_hat_p_buffer.'); % a col vector
+
+% For Matlab version after 2021b which does not support vec(.)
+L1 = size(l_hat_p_buffer, 1) * size(l_hat_p_buffer, 2);
+L2 = size(b_i_hat_p_buffer, 1) * size(b_i_hat_p_buffer, 2);
+L3 = size(b_q_hat_p_buffer, 1) * size(b_q_hat_p_buffer, 2);
+
+vec_l_hat_p = reshape(l_hat_p_buffer, L1, 1);     % vec_l_hat_p = vec(l_hat_p_buffer);  % a col vector 
+vec_b_i_hat_p = reshape(b_i_hat_p_buffer.', L2, 1); % vec_b_i_hat_p = vec(b_i_hat_p_buffer.'); % a col vector
+vec_b_q_hat_p = reshape(b_q_hat_p_buffer.', L3, 1); % vec_b_q_hat_p = vec(b_q_hat_p_buffer.'); % a col vector
 %% vectorize data from cell
 vec_l_hat_d = vectorizeCell(l_hat_d_buffer);
 vec_b_i_hat_d = vectorizeCell(b_i_hat_d_buffer); % a row vector
